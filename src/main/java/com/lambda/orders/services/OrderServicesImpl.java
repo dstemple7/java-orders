@@ -1,7 +1,7 @@
 package com.lambda.orders.services;
 
-import com.lambda.orders.models.Orders;
-import com.lambda.orders.repositories.OrderRepository;
+import com.lambda.orders.models.Order;
+import com.lambda.orders.repositories.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 public class OrderServicesImpl implements OrderServices
 {
     @Autowired
-    OrderRepository orderrepos;
+    OrdersRepository orderrepos;
 
     @Override
-    public Orders save(Orders order){
+    public Order save(Order order){
         return orderrepos.save(order);
     }
 }

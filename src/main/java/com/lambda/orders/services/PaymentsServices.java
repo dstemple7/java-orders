@@ -1,8 +1,8 @@
 package com.lambda.orders.services;
 
-import com.lambda.orders.models.Payments;
+import com.lambda.orders.models.Payment;
 
 public interface PaymentsServices
 {
-    Payments save(Payments payment);
+    Payment save(Payment payment);
 }

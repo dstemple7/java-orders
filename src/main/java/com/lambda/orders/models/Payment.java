@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "payments")
-public class Payments
+public class Payment
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,11 +14,11 @@ public class Payments
     @Column(nullable = false)
     private String type;
 
-    public Payments()
+    public Payment()
     {
     }
 
-    public Payments(String type)
+    public Payment(String type)
     {
         this.type = type;
     }
@@ -46,7 +46,7 @@ public class Payments
     @Override
     public String toString()
     {
-        return "Payments{" +
+        return "Payment{" +
             "paymentid=" + paymentid +
             ", type='" + type + '\'' +
             '}';

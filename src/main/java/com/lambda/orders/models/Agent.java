@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "agents")
-public class Agents
+public class Agent
 {
 
     //    AGENTCODE primary key, not null Long
@@ -31,13 +31,13 @@ public class Agents
     private String country;
 
     @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Customers> customers = new ArrayList<>();
+    private List<Customer> customers = new ArrayList<>();
 
-    public Agents()
+    public Agent()
     {
     }
 
-    public Agents(
+    public Agent(
         String agentname,
         String workingarea,
         double commission,
@@ -114,7 +114,7 @@ public class Agents
     @Override
     public String toString()
     {
-        return "Agents{" +
+        return "Agent{" +
             "agentcode=" + agentcode +
             ", agentname='" + agentname + '\'' +
             ", workingarea='" + workingarea + '\'' +

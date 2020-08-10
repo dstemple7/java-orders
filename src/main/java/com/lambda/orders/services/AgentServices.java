@@ -1,8 +1,8 @@
 package com.lambda.orders.services;
 
-import com.lambda.orders.models.Agents;
+import com.lambda.orders.models.Agent;
 
 public interface AgentServices
 {
-    Agents save(Agents agent);
+    Agent save(Agent agent);
 }

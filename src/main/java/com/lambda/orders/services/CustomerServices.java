@@ -1,8 +1,8 @@
 package com.lambda.orders.services;
 
-import com.lambda.orders.models.Customers;
+import com.lambda.orders.models.Customer;
 
 public interface CustomerServices
 {
-    Customers save(Customers customer);
+    Customer save(Customer customer);
 }

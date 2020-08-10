@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "customers")
-public class Customers
+public class Customer
 {
 
     //    CUSTCODE primary key, not null Long
@@ -49,16 +49,16 @@ public class Customers
     //    AGENTCODE Long foreign key (one agent to many customers) not null
     @ManyToOne
     @JoinColumn(name = "agentcode", nullable = false)
-    private Agents agent;
+    private Agent agent;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Orders> orders = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
 
-    public Customers()
+    public Customer()
     {
     }
 
-    public Customers(
+    public Customer(
         String custname,
         String custcity,
         String workingarea,
@@ -69,7 +69,7 @@ public class Customers
         double paymentamt,
         double outstandingamt,
         String phone,
-        Agents agent)
+        Agent agent)
     {
         this.custname = custname;
         this.custcity = custcity;
@@ -194,12 +194,12 @@ public class Customers
         this.phone = phone;
     }
 
-    public Agents getAgent()
+    public Agent getAgent()
     {
         return agent;
     }
 
-    public void setAgent(Agents agent)
+    public void setAgent(Agent agent)
     {
         this.agent = agent;
     }
@@ -207,7 +207,7 @@ public class Customers
     @Override
     public String toString()
     {
-        return "Customers{" +
+        return "Customer{" +
             "custcode=" + custcode +
             ", custname='" + custname + '\'' +
             ", custcity='" + custcity + '\'' +

@@ -1,10 +1,12 @@
 package com.lambda.orders.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "orders")
-public class Orders
+public class Order
 {
 
     @Id
@@ -14,23 +16,29 @@ public class Orders
 
     private double ordamount;
 
+    @ManyToMany
+    @JoinTable(name = "orderspayments",
+        joinColumns = @JoinColumn(name = "ordnum"),
+        inverseJoinColumns = @JoinColumn(name = "paymentid"))
+    private Set<Payment> payments = new HashSet<>();
+
     private double advanceamount;
 
     //    CUSTCODE Long foreign key (one customer to many orders) not null
     @ManyToOne
     @JoinColumn(name = "custcode", nullable = false)
-    private Customers customer;
+    private Customer customer;
 
     private String orderdescription;
 
-    public Orders()
+    public Order()
     {
     }
 
-    public Orders(
+    public Order(
         double ordamount,
         double advanceamount,
-        Customers customer,
+        Customer customer,
         String orderdescription)
     {
         this.ordamount = ordamount;
@@ -69,12 +77,12 @@ public class Orders
         this.advanceamount = advanceamount;
     }
 
-    public Customers getCustomer()
+    public Customer getCustomer()
     {
         return customer;
     }
 
-    public void setCustomer(Customers customer)
+    public void setCustomer(Customer customer)
     {
         this.customer = customer;
     }
@@ -89,10 +97,14 @@ public class Orders
         this.orderdescription = orderdescription;
     }
 
+    public void addPayments(Payment p1){
+        this.payments.add(p1);
+    }
+
     @Override
     public String toString()
     {
-        return "Orders{" +
+        return "Order{" +
             "ordnum=" + ordnum +
             ", ordamount=" + ordamount +
             ", advanceamount=" + advanceamount +

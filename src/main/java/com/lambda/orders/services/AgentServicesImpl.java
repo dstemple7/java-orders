@@ -1,18 +1,18 @@
 package com.lambda.orders.services;
 
-import com.lambda.orders.models.Agents;
-import com.lambda.orders.repositories.AgentRepository;
+import com.lambda.orders.models.Agent;
+import com.lambda.orders.repositories.AgentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service(value = "agentServices")
-public class AgentsServicesImpl implements AgentServices
+public class AgentServicesImpl implements AgentServices
 {
     @Autowired
-    AgentRepository agentrepos;
+    AgentsRepository agentrepos;
 
     @Override
-    public Agents save(Agents agent){
+    public Agent save(Agent agent){
         return agentrepos.save(agent);
     }
 }
