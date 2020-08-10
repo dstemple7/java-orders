@@ -203,4 +203,24 @@ public class Customers
     {
         this.agent = agent;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Customers{" +
+            "custcode=" + custcode +
+            ", custname='" + custname + '\'' +
+            ", custcity='" + custcity + '\'' +
+            ", workingarea='" + workingarea + '\'' +
+            ", custcountry='" + custcountry + '\'' +
+            ", grade='" + grade + '\'' +
+            ", openingamt=" + openingamt +
+            ", receiveamt=" + receiveamt +
+            ", paymentamt=" + paymentamt +
+            ", outstandingamt=" + outstandingamt +
+            ", phone='" + phone + '\'' +
+            ", agent=" + agent +
+            ", orders=" + orders +
+            '}';
+    }
 }

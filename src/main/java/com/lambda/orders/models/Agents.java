@@ -110,4 +110,18 @@ public class Agents
     {
         this.country = country;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Agents{" +
+            "agentcode=" + agentcode +
+            ", agentname='" + agentname + '\'' +
+            ", workingarea='" + workingarea + '\'' +
+            ", commission=" + commission +
+            ", phone='" + phone + '\'' +
+            ", country='" + country + '\'' +
+            ", customers=" + customers +
+            '}';
+    }
 }

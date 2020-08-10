@@ -88,4 +88,16 @@ public class Orders
     {
         this.orderdescription = orderdescription;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Orders{" +
+            "ordnum=" + ordnum +
+            ", ordamount=" + ordamount +
+            ", advanceamount=" + advanceamount +
+            ", customer=" + customer +
+            ", orderdescription='" + orderdescription + '\'' +
+            '}';
+    }
 }

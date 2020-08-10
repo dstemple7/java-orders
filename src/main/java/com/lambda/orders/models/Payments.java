@@ -42,4 +42,13 @@ public class Payments
     {
         this.type = type;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Payments{" +
+            "paymentid=" + paymentid +
+            ", type='" + type + '\'' +
+            '}';
+    }
 }
